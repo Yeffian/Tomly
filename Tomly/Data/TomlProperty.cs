@@ -15,9 +15,15 @@ public class TomlProperty
     /// </summary>
     public object Value { get; private set; }
     
-    public TomlProperty(string key, object value)
+    /// <summary>
+    /// The type of the property value.
+    /// </summary>
+    public Type Type { get; private set; }
+    
+    public TomlProperty(string key, object value, Type type)
     {
         Key = key;
         Value = value;
+        Type = type;
     }
 }

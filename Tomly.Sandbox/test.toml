@@ -1,4 +1,4 @@
-﻿[server]
+[server]
 port = 8080
 hostname = "idk.lol"
 admin = "yeff"
@@ -6,4 +6,5 @@ ssl = true
 
 [dev]
 venv = false
-authors = [ "yeffian", "aditc", "yeffycodegit" ]
+authors = "yis"
+
