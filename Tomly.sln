@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tomly", "Tomly\Tomly.csproj", "{6A4E8F6E-1846-455F-AE47-2D408D7CABAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tomly.Sandbox", "Tomly.Sandbox\Tomly.Sandbox.csproj", "{EC6C083D-95CC-4DC7-84AC-EE22DA0E8EB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A4E8F6E-1846-455F-AE47-2D408D7CABAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A4E8F6E-1846-455F-AE47-2D408D7CABAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A4E8F6E-1846-455F-AE47-2D408D7CABAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A4E8F6E-1846-455F-AE47-2D408D7CABAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC6C083D-95CC-4DC7-84AC-EE22DA0E8EB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC6C083D-95CC-4DC7-84AC-EE22DA0E8EB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC6C083D-95CC-4DC7-84AC-EE22DA0E8EB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC6C083D-95CC-4DC7-84AC-EE22DA0E8EB3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
