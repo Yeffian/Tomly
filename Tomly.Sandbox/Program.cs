@@ -4,18 +4,21 @@ using Tomly.Data;
 using Tomly.Serialization;
 
 var serverGroup = new TomlGroup("server");
-serverGroup.Properties.Add(new("port", 8080, typeof(int)));
-serverGroup.Properties.Add(new("hostname", "idk.lol", typeof(string)));
-serverGroup.Properties.Add(new("admin", "yeff", typeof(string)));
-serverGroup.Properties.Add(new("ssl", true, typeof(bool)));
+serverGroup.AddProperties(
+    TomlProperty.CreateProperty("port", 8080),
+    TomlProperty.CreateProperty("hostname", "idk.lol"),
+    TomlProperty.CreateProperty("admin", "yeff"),
+    TomlProperty.CreateProperty("ssl", true)
+);
+
 
 var devGroup = new TomlGroup("dev");
-devGroup.Properties.Add(new("venv", false, typeof(bool)));
-devGroup.Properties.Add(new("authors", "yis", typeof(string)));
+devGroup.AddProperties(
+    TomlProperty.CreateProperty("venv", false),
+    TomlProperty.CreateProperty("authors", "yis")
+);
 
-var tomlObject = new ParsedTomlDocument();
-tomlObject.AddGroup(serverGroup);
-tomlObject.AddGroup(devGroup);
+var tomlObject = new ParsedTomlDocument(serverGroup, devGroup);
 
 var data = TomlSerializer.Serialize(tomlObject);
 File.WriteAllText("C:\\Users\\aditc\\dev\\Tomly\\Tomly.Sandbox\\test.toml", data);

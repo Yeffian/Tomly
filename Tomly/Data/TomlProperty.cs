@@ -20,10 +20,17 @@ public class TomlProperty
     /// </summary>
     public Type Type { get; private set; }
     
-    public TomlProperty(string key, object value, Type type)
+    private TomlProperty(string key, object value, Type type)
     {
         Key = key;
         Value = value;
         Type = type;
+    }
+
+    public static TomlProperty CreateProperty<T>(string key, T value)
+    {
+        var type = value.GetType();
+
+        return new TomlProperty(key, value, type);
     }
 }

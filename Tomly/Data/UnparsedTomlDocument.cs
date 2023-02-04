@@ -20,4 +20,6 @@ public class UnparsedTomlDocument
     /// Lines of TOML code.
     /// </summary>
     public int LOC { get; private set; }
+
+    public char CharacterAt(float location) => Content[(int) location];
 }

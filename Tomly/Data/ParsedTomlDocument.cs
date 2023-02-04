@@ -18,6 +18,11 @@ public class ParsedTomlDocument
         Groups = groups;
     }
     
+    public ParsedTomlDocument(params TomlGroup[] groups)
+    {
+        Groups = groups.ToList();
+    }
+    
     public ParsedTomlDocument()
     {
         Groups = new List<TomlGroup>();

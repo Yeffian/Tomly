@@ -22,6 +22,12 @@ public class TomlGroup
     /// </summary>
     public List<TomlProperty> Properties { get; private set; }
 
+    public void AddProperties(params TomlProperty[] properties)
+    {
+        foreach (TomlProperty property in properties) 
+            Properties.Add(property);
+    }
+
     public TomlGroup(string groupName, List<TomlProperty> properties)
     {
         GroupName = groupName;
