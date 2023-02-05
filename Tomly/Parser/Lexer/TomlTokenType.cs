@@ -2,5 +2,5 @@
 
 public enum TomlTokenType
 {
-    Group, Key, Value, Equals
+    Group, Key, Value, Equals, Bad
 }

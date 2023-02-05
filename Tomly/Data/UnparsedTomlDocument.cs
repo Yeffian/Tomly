@@ -22,4 +22,6 @@ public class UnparsedTomlDocument
     public int LOC { get; private set; }
 
     public char CharacterAt(float location) => Content[(int) location];
+
+    public float Length() => Content.Length;
 }
