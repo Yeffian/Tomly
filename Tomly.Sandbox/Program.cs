@@ -29,7 +29,7 @@ var lexer = new TomlLexer(doc);
 
 var tokens = lexer.ProduceTokens();
 
-// foreach (TomlToken token in tokens)
-// {
-//     Console.WriteLine($"TomlToken(lexeme = {token.Lexeme}, type = {token.Type})");
-// }
+foreach (TomlToken token in tokens)
+{
+    Console.WriteLine($"TomlToken(lexeme = {token.Lexeme}, type = {token.Type})");
+}

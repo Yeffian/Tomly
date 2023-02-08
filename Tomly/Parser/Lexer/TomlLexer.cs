@@ -27,12 +27,11 @@ public class TomlLexer
                 _current++;
                 return new TomlToken(TomlTokenType.Equals, "=", typeof(string));
             case var _ when char.IsLetter(Current):
-                _current++;
                 string identifier = ProduceKeyString();
                 return new TomlToken(TomlTokenType.Key, identifier, typeof(string));
-            // case var _ when Current == '"':
-            //     string value = ProduceValueString();
-            //     return new TomlToken(TomlTokenType.Value, value, typeof(string));
+            case var _ when Current == '"':
+                string value = ProduceValueString();
+                return new TomlToken(TomlTokenType.Value, value, typeof(string));
             default:
                 _current++;
                 return new TomlToken(TomlTokenType.Bad, " ", typeof(string));
@@ -41,6 +40,7 @@ public class TomlLexer
 
     public IEnumerable<TomlToken> ProduceTokens()
     {
+        // TODO: create token list and identify all the tokens
         while (!AtEnd)
         {
             var token = ProduceToken();
@@ -52,7 +52,9 @@ public class TomlLexer
     {
         string ident = "";
 
-        while (Char.IsLetter(Peek(1)) && !AtEnd)
+        bool charClause = Char.IsLetter(Peek(1));
+        
+        while (charClause && !AtEnd)
         {
             if (Current != '=')
             {
@@ -67,24 +69,20 @@ public class TomlLexer
 
         return ident;
     }
-    
-    // private string ProduceValueString()
-    // {
-    //     string value = "";
-    //
-    //     while (Char.IsLetter(Peek(1)) && !AtEnd)
-    //     {
-    //         if (Current != '"')
-    //         {
-    //             value += Current;
-    //             _current++;
-    //         }
-    //         else
-    //         {
-    //             break;
-    //         }
-    //     }
-    //     
-    //     return value;
-    // }
+
+    private string ProduceValueString()
+    {
+        _current++;
+        string value = "";
+
+        while (Current != '"' && !AtEnd)
+        {
+            value += Current;
+            _current++;
+        }
+
+        _current++;
+        
+        return value;
+    }
 }
